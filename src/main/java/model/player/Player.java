@@ -32,15 +32,11 @@ public class Player implements IPlayer{
 	}
 	
 	public final void addCardToHand(Card pc) {
-		/*
-		 * TODO Atelier1
-		 */
+		this.hand.addCard(pc);
 	}
 	
 	public final void addCardToTrickPile(Card pc) {
-		/*
-		 * TODO Atelier1
-		 */
+		this.trickPile.addCard(pc);
 	}
 	
 	public final Card playCard(int index) {
@@ -110,9 +106,7 @@ public class Player implements IPlayer{
 	@Override
 	public final boolean isStillActive() {
 		boolean ret = false;
-		/*
-		 * TODO Atelier1
-		 */
+		ret = !this.hand.isEmpty();
 		return ret;
 	}
 
@@ -123,39 +117,30 @@ public class Player implements IPlayer{
 	 */
 	public final boolean hasWonAllCards(int deckSize) {
 		boolean ret = false;
-		/*
-		 * TODO Atelier1
-		 */
+		int allcard = this.hand.size() + this.trickPile.size();
+		ret = allcard == deckSize;
 		return ret;
 	}
 	
 	@Override
 	public final boolean isTrickWinner() {
 		boolean ret = false;
-		/*
-		 * TODO Atelier1
-		 */
+		ret = this.isTrickWinner;
 		return ret;
 	}
 
 	public final void setTrickWinner(boolean isTrickWinner) {
-		/*
-		 * TODO Atelier1
-		 */
+		this.isTrickWinner = isTrickWinner;
 	}
 
 	public final boolean isGameWinner() {
 		boolean ret = false;
-		/*
-		 * TODO Atelier1
-		 */
+		ret = this.isGameWinner;
 		return ret;
 	}
 
 	public final void setGameWinner(boolean isGameWinner) {
-		/*
-		 * TODO Atelier1
-		 */
+		this.isGameWinner = isGameWinner;
 	}
 
 	@Override
