@@ -216,19 +216,19 @@ public class TestAtelier1 {
 		System.out.println("Après playCard : c8 : " + c8);	// Après playCard : c8 :  2-Carreau
 		System.out.println("Après playCard(0) : " + p1);	// Après playCard(0) : [Joueur1 ** Hand[[Roi-Carreau, 2-Pique]] ** trickPile[[]]]
 
-//		/* Test removeCardFromHand(), removeCardFromTrickPile() */
-//		p1.addCardToTrickPile(p1.removeCardFromHand(0));
-//		System.out.println("Après removeCardFromHand(0) : " + p1);	// Après removeCardFromHand(0) : [Joueur1 ** Hand[[Roi-Carreau]] ** trickPile[[2-Pique]]]
-//		p1.removeCardFromTrickPile(0);
-//		System.out.println("Après removeCardFromTrickPile(0) : " + p1);	// Après removeCardFromTrickPile(0) : [Joueur1 ** Hand[[2-Pique]] ** trickPile[[]]]
+		/* Test removeCardFromHand(), removeCardFromTrickPile() */
+		p1.addCardToTrickPile(p1.removeCardFromHand(0));
+		System.out.println("Après removeCardFromHand(0) : " + p1);	// Après removeCardFromHand(0) : [Joueur1 ** Hand[[Roi-Carreau]] ** trickPile[[2-Pique]]]
+		p1.removeCardFromTrickPile(0);
+		System.out.println("Après removeCardFromTrickPile(0) : " + p1);	// Après removeCardFromTrickPile(0) : [Joueur1 ** Hand[[2-Pique]] ** trickPile[[]]]
+
 //
-//
-//		/* Test equals(), compareTo */
-//		// faites générer les méthodes equals et hashcode par votre IDE
-//		System.out.println("p1.equals(new Player(\"Joueur2\") : " + p1.equals(new Player("Joueur2")));	// p1.equals(new Player("Joueur2") : false
-//		System.out.println("p1.compareTo(p1) : " + p1.compareTo(p1));	// p1.compareTo(p1) : 0
-//		System.out.println("new Player(\"Joueur3\").compareTo(p1) : " + new Player("Joueur3").compareTo(p1));	// new Player("Joueur3").compareTo(p1) : 2
-//
+		/* Test equals(), compareTo */
+		// faites générer les méthodes equals et hashcode par votre IDE
+		System.out.println("p1.equals(new Player(\"Joueur2\") : " + p1.equals(new Player("Joueur2")));	// p1.equals(new Player("Joueur2") : false
+		System.out.println("p1.compareTo(p1) : " + p1.compareTo(p1));	// p1.compareTo(p1) : 0
+		System.out.println("new Player(\"Joueur3\").compareTo(p1) : " + new Player("Joueur3").compareTo(p1));	// new Player("Joueur3").compareTo(p1) : 2
+
 
 	}
 

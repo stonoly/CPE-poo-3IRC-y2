@@ -41,41 +41,41 @@ public class Player implements IPlayer{
 	
 	public final Card playCard(int index) {
 		Card card = null;
-		/*
-		 * TODO Atelier1
-		 */
+		card = this.removeCardFromHand(index);
 		return card;
 	}
 	
 	public final Card removeCardFromHand(int index) {
 		Card card = null;
-		/*
-		 * TODO Atelier1
-		 */
+		card = this.hand.removeCard(index);
+
 		return card;
 	}
 	
 	public final Card removeCardFromTrickPile(int index) {
 		Card card = null;
-		/*
-		 * TODO Atelier1
-		 */
+		card = this.trickPile.removeCard(index);
 		return card;
 	}
 	
 	public final boolean revealeCard(int index) {
 		boolean ret = false;
-		/*
-		 * TODO Atelier1
-		 */
+		if (!this.isHandEmpty()){
+			ret = this.hand.revealeCard(index);
+		}
 		return ret;
 	}
 	
 	public final boolean hideCard(int index) {
 		boolean ret = false;
-		/*
-		 * TODO Atelier1
-		 */
+		Card card_to_change_Place = null;
+		while(!this.isTrickPileEmpty()){
+			card_to_change_Place = this.removeCardFromTrickPile(0);
+			this.addCardToHand(card_to_change_Place);
+		}
+		if (!this.isHandEmpty()){
+			ret = this.hand.hideCard(index);
+		}
 		return ret;
 	}
 	
@@ -86,17 +86,13 @@ public class Player implements IPlayer{
 	
 	public final boolean isHandEmpty() {
 		boolean ret = false;
-		/*
-		 * TODO Atelier1
-		 */
+		ret = this.hand.isEmpty();
 		return ret;
 	}
 	
 	public final boolean isTrickPileEmpty() {
 		boolean ret = false;
-		/*
-		 * TODO Atelier1
-		 */
+		ret = this.trickPile.isEmpty();
 		return ret;
 	}
 	
@@ -155,9 +151,7 @@ public class Player implements IPlayer{
 	@Override
 	public int compareTo(IPlayer arg0) {
 		int ret = -999999;
-		/*
-		 * TODO Atelier1
-		 */
+		ret = this.name.compareTo(arg0.getName());
 		return ret;
 	}
 
