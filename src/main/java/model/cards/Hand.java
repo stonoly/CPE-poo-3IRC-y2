@@ -1,11 +1,6 @@
 package model.cards;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 import allShared.ICardsCollection;
 
@@ -140,9 +135,7 @@ public class Hand implements ICardsCollection {
 
 	@Override
 	public void sort() {
-		/*
-		 * TODO Atelier2
-		 */
+		Collections.sort(this.cards);
 	}
 
 	@Override
@@ -162,17 +155,22 @@ public class Hand implements ICardsCollection {
 	 */
 	@Override
 	 public final void shuffle() {
-		 /*
-		  * TODO Atelier2
-		  */
+		Random random = new Random();
+		for (int i = 0; i < this.cards.size(); i++) {
+			int rand_num = random.nextInt(this.cards.size());
+			Collections.swap(this.cards, i, rand_num);
+		}
 	 }
+
+//	@Override
+//	public final void shuffle() {
+//		Collections.shuffle(this.cards);
+//	}
 
 	 @Override
 	 public final Card max() {
 		 Card card = null;
-		 /*
-		  * TODO Atelier2
-		  */
+		 card = Collections.max(this.cards);
 		 return  card;
 	 }
 
