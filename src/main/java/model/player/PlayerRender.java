@@ -24,27 +24,27 @@ public class PlayerRender implements IPlayer, Comparable<IPlayer> {
 	@Override
 	public final String getName() {
 		String ret = null;
-		/*
-		 * TODO Atelier2
-		 */
+		if (player != null) {
+			ret = player.getName();
+		}
 		return ret;
 	}
 	
 	@Override
 	public final boolean isStillActive() {
 		boolean ret = false;
-		/*
-		 * TODO Atelier2
-		 */
+		if (player != null) {
+			ret = player.isStillActive();
+		}
 		return ret;
 	}
 
 	@Override
 	public final boolean isTrickWinner() {
 		boolean ret = false;
-		/*
-		 * TODO Atelier2
-		 */
+		if (player != null) {
+			ret = player.isTrickWinner();
+		}
 		return ret;
 	}
 	
@@ -52,18 +52,18 @@ public class PlayerRender implements IPlayer, Comparable<IPlayer> {
 	@Override
 	public boolean isGameWinner() {
 		boolean ret = false;
-		/*
-		 * TODO Atelier2
-		 */
+		if (player != null) {
+			ret = player.isGameWinner();
+		}
 		return ret;
 	}
 
 	@Override
 	public String toString() {
 		String ret = null;
-		/*
-		 * TODO Atelier2
-		 */
+		if (player != null) {
+			ret = player.getName();
+		}
 		return ret;
 	}
 
@@ -88,9 +88,9 @@ public class PlayerRender implements IPlayer, Comparable<IPlayer> {
 	@Override
 	public int compareTo(IPlayer o) {
 		int ret = -99999;
-		/*
-		 * TODO Atelier2
-		 */
+		if (player != null) {
+			ret = player.getName().compareTo(o.getName());
+		}
 		return ret;
 	}
 

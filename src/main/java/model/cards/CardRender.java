@@ -23,36 +23,36 @@ public class CardRender implements ICard, Comparable<CardRender> {
 	@Override
 	public final Rank getRank() {
 		Rank ret = null;
-		/*
-		 * TODO Atelier2
-		 */
+		if (card != null) {
+			ret = card.getRank();
+		}
 		return ret;
 	}
 
 	@Override
 	public final Suit getSuit() {
 		Suit ret = null;
-		/*
-		 * TODO Atelier2
-		 */
+		if (card != null) {
+			ret = card.getSuit();
+		}
 		return ret;
 	}
 	
 	@Override
 	public final boolean isRevealed() {
 		boolean ret = false;
-		/*
-		 * TODO Atelier2
-		 */
+		if (card != null) {
+			ret = card.isRevealed();
+		}
 		return ret;
 	}
 	
 	@Override
 	public int compareTo(CardRender o) {
 		int ret = -99999;
-		/*
-		 * TODO Atelier2
-		 */
+		if (card != null) {
+			ret = card.compareTo(o.card);
+		}
 		return ret;
 	}
 // regénérer equals et hashcode avec IDE
@@ -77,9 +77,9 @@ public class CardRender implements ICard, Comparable<CardRender> {
 	@Override
 	public String toString() {
 		String ret = null;
-		/*
-		 * TODO Atelier2
-		 */
+		if (card != null) {
+			ret = card.toString();
+		}
 		return ret;
 	}
 }

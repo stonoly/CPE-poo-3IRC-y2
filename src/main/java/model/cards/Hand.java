@@ -14,33 +14,21 @@ import allShared.ICardsCollection;
  * 
  * @author francoise.perrin
  */
-public class Hand implements ICardsCollection {
+public class Hand extends AbstractCardsCollection {
 
-	private final List<Card> cards; /* ToChange Atelier2 */
-
-	/*
-	 * TODO ToChange Atelier2
-	 */
 	public Hand() {
 		super();
-		cards = new ArrayList<Card>();
 	}
 
-	/*
-	 * TODO ToChange Atelier2
-	 */
 	public Hand(Collection<Card> collection) {
-		super();
-		cards = new ArrayList<Card>(collection);
+		super(collection);
 	}
 
 	/*
 	 * TODO ToChange Atelier2
 	 */
 	public Hand(ICardsCollection iCardsCollection) {
-		super();		// TODO - à supprimer Atelier 2
-		cards = null; 	// TODO - à supprimer Atelier 2
-		//super(iCardsCollection); // TODO - à activer Atelier 2
+		super(iCardsCollection); // TODO - à activer Atelier 2
 
 	}
 
@@ -49,43 +37,43 @@ public class Hand implements ICardsCollection {
 		cards.add(pc);
 	}
 
-	@Override
-	public final Card removeTopCard() {
-		Card card = null;
-		if (!this.isEmpty()){
-			card = this.cards.get(0);
-			this.cards.remove(0);
-		}
-		return card;
-	}
+//	@Override
+//	public final Card removeTopCard() {
+//		Card card = null;
+//		if (!this.isEmpty()){
+//			card = this.cards.get(0);
+//			this.cards.remove(0);
+//		}
+//		return card;
+//	}
+//
+//	@Override
+//	public final Card removeCard(int index) {
+//		Card card = null;
+//		if (index < this.size() && !this.isEmpty()){
+//			card = this.cards.get(index);
+//			this.cards.remove(index);
+//		}
+//		return card;
+//	}
 
-	@Override
-	public final Card removeCard(int index) {
-		Card card = null;
-		if (index < this.size() && !this.isEmpty()){
-			card = this.cards.get(index);
-			this.cards.remove(index);
-		}
-		return card;
-	}
+//	@Override
+//	public final boolean isEmpty() {
+//		boolean ret = this.cards.isEmpty();
+//		return ret;
+//	}
 
-	@Override
-	public final boolean isEmpty() {
-		boolean ret = this.cards.isEmpty();
-		return ret;
-	}
+//	@Override
+//	public final void clear() {
+//		this.cards.clear();
+//	}
 
-	@Override
-	public final void clear() {
-		this.cards.clear();
-	}
-
-	@Override
-	public final int size() {
-		int ret = 0;
-		ret = this.cards.size();
-		return ret;
-	}
+//	@Override
+//	public final int size() {
+//		int ret = 0;
+//		ret = this.cards.size();
+//		return ret;
+//	}
 
 	@Override
 	public String toString() {
@@ -133,17 +121,17 @@ public class Hand implements ICardsCollection {
 	}
 
 
-	@Override
-	public void sort() {
-		Collections.sort(this.cards);
-	}
+//	@Override
+//	public void sort() {
+//		Collections.sort(this.cards);
+//	}
 
-	@Override
-	public void sort(Comparator<Card> comparator) {
-		/*
-		 * TODO Atelier2
-		 */
-	}
+//	@Override
+//	public void sort(Comparator<Card> comparator) {
+//		/*
+//		 * TODO Atelier2
+//		 */
+//	}
 
 
 	/**
@@ -153,35 +141,35 @@ public class Hand implements ICardsCollection {
 	 *  1 - en utilisant la méthode native shuffle() de la classe Collections
 	 *  2 - en utilisant la méthode swap() et un nombre aléatoire (Random)  
 	 */
-	@Override
-	 public final void shuffle() {
-		Random random = new Random();
-		for (int i = 0; i < this.cards.size(); i++) {
-			int rand_num = random.nextInt(this.cards.size());
-			Collections.swap(this.cards, i, rand_num);
-		}
-	 }
+//	@Override
+//	 public final void shuffle() {
+//		Random random = new Random();
+//		for (int i = 0; i < this.cards.size(); i++) {
+//			int rand_num = random.nextInt(this.cards.size());
+//			Collections.swap(this.cards, i, rand_num);
+//		}
+//	 }
 
 //	@Override
 //	public final void shuffle() {
 //		Collections.shuffle(this.cards);
 //	}
 
-	 @Override
-	 public final Card max() {
-		 Card card = null;
-		 card = Collections.max(this.cards);
-		 return  card;
-	 }
-
-	 @Override
-	 public final Card max(Comparator<Card> comparator) {
-		 Card card = null;
-		 /*
-		  * TODO Atelier2
-		  */
-		 return  card;
-	 }
+//	 @Override
+//	 public final Card max() {
+//		 Card card = null;
+//		 card = Collections.max(this.cards);
+//		 return  card;
+//	 }
+//
+//	 @Override
+//	 public final Card max(Comparator<Card> comparator) {
+//		 Card card = null;
+//		 /*
+//		  * TODO Atelier2
+//		  */
+//		 return  card;
+//	 }
 
 	 /*
 	  * Illustration du Design Pattern Iterator
@@ -190,23 +178,23 @@ public class Hand implements ICardsCollection {
 	  * [ Cette partie du code sera utile à partir de l'atelier 2
 	  * Ce n'est pas grave si vous ne la comprenez pas ...]
 	  */
-	 @Override
-	 public final Iterator<Card> iterator() {
-
-		 return new Iterator<Card>() {
-			 Iterator<Card> it =  cards.iterator();
-			 @Override
-			 public boolean hasNext() {
-				 return it.hasNext();
-			 }
-
-			 @Override
-			 public Card next() {
-				 return it.next();
-			 }
-
-		 };
-	 }
+//	 @Override
+//	 public final Iterator<Card> iterator() {
+//
+//		 return new Iterator<Card>() {
+//			 Iterator<Card> it =  cards.iterator();
+//			 @Override
+//			 public boolean hasNext() {
+//				 return it.hasNext();
+//			 }
+//
+//			 @Override
+//			 public Card next() {
+//				 return it.next();
+//			 }
+//
+//		 };
+//	 }
 
 
 }

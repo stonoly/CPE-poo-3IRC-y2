@@ -16,17 +16,13 @@ public class ClassicWarGameEvaluator extends AbstractGameEvaluator implements IG
 
 	protected final Card max(ICardsCollection gamingMat) {
 		Card maxCard = null;
-		/*
-		 * TODO Atelier2
-		 */
+		maxCard = gamingMat.max();
 		return maxCard;
 	}
 
 	protected final int comparaison(Card card, Card maxCard) {
 		int diff = -99999;
-		/*
-		 * TODO Atelier2
-		 */
+		diff = card.compareTo(maxCard);
 		return diff;
 	}
 }

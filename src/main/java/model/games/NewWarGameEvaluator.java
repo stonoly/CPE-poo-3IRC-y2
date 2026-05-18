@@ -19,17 +19,15 @@ public class NewWarGameEvaluator extends AbstractGameEvaluator implements IGameE
 
 	protected final Card max(ICardsCollection gamingMat) {
 		Card maxCard = null;
-		/*
-		 * TODO Atelier2
-		 */
+		Comparator<Card> comparator = new NewWarGameCardComparator();
+		maxCard = gamingMat.max(comparator);
 		return maxCard;
 	}
 
 	protected final int comparaison(Card card, Card maxCard) {
 		int diff = -99999;
-		/*
-		 * TODO Atelier2
-		 */
+		Comparator <Card> comparator = new NewWarGameCardComparator();
+		diff = comparator.compare(card, maxCard);
 		return diff;
 	}
 	
